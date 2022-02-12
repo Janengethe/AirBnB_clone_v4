@@ -24,7 +24,7 @@ $(document).ready(function () {
   function ajaxCall (amenity_id) {
     $.ajax({
       type: 'POST',
-      url: 'http://0.0.0.0:5001/api/v1/places_search/',
+      url: 'http://192.168.8.103:5001/api/v1/places_search/',
       data: JSON.stringify({ amenities: amenity_id }),
       dataType: 'json',
       contentType: 'application/json'
@@ -49,8 +49,8 @@ $(document).ready(function () {
       });
   }
 
-  $.get('http://0.0.0.0:5001/api/v1/status/', function (data, textStatus) {
-    if (data.status === 'OK') {
+  $.get('http://192.168.8.103:5001/api/v1/status/', function (data, textStatus) {
+    if (data.status == 'OK') {
       $('#api_status').addClass('available');
     } else {
       $('#api_status').removeClass('available');
